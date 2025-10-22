@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="site.png" alt="Image du site">
-    <audio autoplay loop>
-        <source src="site.mp3" type="audio/mpeg">
-    </audio>
+    <div id="start-screen">
+        <button id="watch-clips-btn">Watch Clips</button>
+    </div>
+    
+    <div id="content" style="display: none;">
+        <img src="site.png" alt="Image du site" id="main-image">
+        <audio loop id="audio-player">
+            <source src="site.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
