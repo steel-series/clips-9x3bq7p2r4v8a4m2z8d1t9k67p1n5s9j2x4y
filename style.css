@@ -7,12 +7,120 @@
 body {
     background: #000;
     overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
-img {
+#start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#watch-clips-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#watch-clips-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+}
+
+#watch-clips-btn:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+#content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#main-image {
     width: 100vw;
     height: 100vh;
     object-fit: fill;
+    transition: all 0.1s ease;
+}
+
+/* Effets de flash INTENSES */
+.flash-white {
+    filter: brightness(5) contrast(3) saturate(0) blur(0.5px);
+    animation: flashWhite 0.05s ease-in-out;
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.8);
+}
+
+.flash-red {
+    filter: brightness(4) contrast(2.5) hue-rotate(0deg) saturate(4) blur(0.3px);
+    animation: flashRed 0.08s ease-in-out;
+    box-shadow: 0 0 80px rgba(255, 0, 0, 0.9);
+}
+
+.flash-blue {
+    filter: brightness(3.5) contrast(2) hue-rotate(240deg) saturate(3.5) blur(0.4px);
+    animation: flashBlue 0.06s ease-in-out;
+    box-shadow: 0 0 90px rgba(0, 100, 255, 0.8);
+}
+
+.flash-green {
+    filter: brightness(4.5) contrast(2.8) hue-rotate(120deg) saturate(4.2) blur(0.2px);
+    animation: flashGreen 0.07s ease-in-out;
+    box-shadow: 0 0 85px rgba(0, 255, 0, 0.9);
+}
+
+.flash-purple {
+    filter: brightness(3.8) contrast(2.3) hue-rotate(300deg) saturate(3.8) blur(0.3px);
+    animation: flashPurple 0.09s ease-in-out;
+    box-shadow: 0 0 95px rgba(255, 0, 255, 0.8);
+}
+
+@keyframes flashWhite {
+    0% { filter: brightness(1) contrast(1) saturate(1) blur(0px); box-shadow: none; }
+    50% { filter: brightness(6) contrast(4) saturate(0) blur(1px); box-shadow: 0 0 150px rgba(255, 255, 255, 1); }
+    100% { filter: brightness(1) contrast(1) saturate(1) blur(0px); box-shadow: none; }
+}
+
+@keyframes flashRed {
+    0% { filter: brightness(1) contrast(1) hue-rotate(0deg) saturate(1) blur(0px); box-shadow: none; }
+    50% { filter: brightness(5) contrast(3) hue-rotate(0deg) saturate(5) blur(0.5px); box-shadow: 0 0 120px rgba(255, 0, 0, 1); }
+    100% { filter: brightness(1) contrast(1) hue-rotate(0deg) saturate(1) blur(0px); box-shadow: none; }
+}
+
+@keyframes flashBlue {
+    0% { filter: brightness(1) contrast(1) hue-rotate(0deg) saturate(1) blur(0px); box-shadow: none; }
+    50% { filter: brightness(4.5) contrast(2.5) hue-rotate(240deg) saturate(4.5) blur(0.6px); box-shadow: 0 0 130px rgba(0, 100, 255, 1); }
+    100% { filter: brightness(1) contrast(1) hue-rotate(0deg) saturate(1) blur(0px); box-shadow: none; }
+}
+
+@keyframes flashGreen {
+    0% { filter: brightness(1) contrast(1) hue-rotate(0deg) saturate(1) blur(0px); box-shadow: none; }
+    50% { filter: brightness(5.5) contrast(3.5) hue-rotate(120deg) saturate(5.2) blur(0.3px); box-shadow: 0 0 110px rgba(0, 255, 0, 1); }
+    100% { filter: brightness(1) contrast(1) hue-rotate(0deg) saturate(1) blur(0px); box-shadow: none; }
+}
+
+@keyframes flashPurple {
+    0% { filter: brightness(1) contrast(1) hue-rotate(0deg) saturate(1) blur(0px); box-shadow: none; }
+    50% { filter: brightness(4.8) contrast(3) hue-rotate(300deg) saturate(4.8) blur(0.4px); box-shadow: 0 0 140px rgba(255, 0, 255, 1); }
+    100% { filter: brightness(1) contrast(1) hue-rotate(0deg) saturate(1) blur(0px); box-shadow: none; }
 }
 
 audio {
